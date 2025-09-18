@@ -57,6 +57,12 @@ void libererTableau(tableauDynamique *tab)
     free(tab);           // supprimer la structure
 }
 
+// est vide
+bool estVide(tableauDynamique *tab)
+{
+    return taille(tab) == 0;
+}
+
 // taille du tableau
 int taille(tableauDynamique *tab)
 {
@@ -93,4 +99,11 @@ void ajouteFin(struct tableauDynamique *tab, int element)
         tab->elements = temp;
     }
     tab->elements[taille(tab) - 1] = element;
+}
+
+int supprimerFin(tableauDynamique *tab)
+{
+    int valeur = get(tab, taille(tab) - 1);
+    tab->taille -= 1;
+    return valeur;
 }
