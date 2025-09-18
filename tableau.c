@@ -12,7 +12,7 @@ int main()
     {
         printf("Donner une valeur et 0 pour quiiter : ");
         scanf("%i", &valeur);
-        ajouterElementA(tab, 0, valeur);
+        ajouterElementA(tab, taille(tab), valeur);
         afficherTableau(tab);
         if (valeur == 0)
         {
@@ -110,6 +110,7 @@ void ajouteFin(struct tableauDynamique *tab, int element)
     tab->elements[taille(tab) - 1] = element;
 }
 
+// supprimer le tableau n est pas vide
 int supprimerFin(tableauDynamique *tab)
 {
     int valeur = get(tab, taille(tab) - 1);
@@ -139,4 +140,16 @@ void ajouterElementA(tableauDynamique *tab, int index, int element)
     }
     free(tab->elements);
     tab->elements = temp;
+}
+
+// supprime des element a index
+int supprimerA(tableauDynamique *tab, int index)
+{
+    int valeur = get(tab, index);
+    for (int i = index + 1; i < taille(tab); i++)
+    {
+        tab->elements[i - 1] = tab->elements[i];
+    }
+    tab->taille -= 1;
+    return valeur;
 }
