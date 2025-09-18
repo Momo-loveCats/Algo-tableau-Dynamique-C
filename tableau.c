@@ -12,7 +12,7 @@ int main()
     {
         printf("Donner une valeur et 0 pour quiiter : ");
         scanf("%i", &valeur);
-        ajouteElementA(tab, 0, valeur);
+        ajouterElementA(tab, 0, valeur);
         afficherTableau(tab);
         if (valeur == 0)
         {
