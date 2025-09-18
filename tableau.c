@@ -65,9 +65,16 @@ void ajouteFin(struct tableauDynamique *tab, int element)
 {
     // si on arrive a cap doubler le tableau
     tab->taille += 1;
-    if (element >= get(tab, capacite(tab)))
+    if (taille(tab) >= get(tab, capacite(tab)))
     {
-
-        tableauDynamique *temp =
+        tab->capacite *= 2;
+        int *temp = malloc(sizeof(int) * tab->capacite);
+        for (int i = 0; i < taille(tab) - 1; i++)
+        {
+            temp[i] = get(tab, i);
+        }
+        free(tab->elements);
+        tab->elements = temp;
     }
+    tab->elements[taille(tab) - 1] = element;
 }
