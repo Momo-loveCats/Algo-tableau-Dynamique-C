@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>s
+#include <stdbool.h>
 
 // Definition de la structure tableauDynamique
 typedef struct tableauDynamique
@@ -31,7 +31,7 @@ int supprimerA(struct tableauDynamique *tab, int index);
 // Ajoute un element a la fin du tableau
 void ajouteFin(struct tableauDynamique *tab, int element);
 
-// supprimer le dernier element du tableau
+// supprimer le dernier element du tableau: contient au moins 1 element
 int supprimerFin(struct tableauDynamique *tab);
 
 // Obtenir la valeur a l index correcte;

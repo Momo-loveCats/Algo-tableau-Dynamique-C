@@ -19,6 +19,15 @@ int main()
             break;
         }
     } while (true);
+
+    do
+    {
+        printf("supprime le dernier : ");
+        scanf("%i", &valeur);
+        supprimerFin(tab);
+        afficherTableau(tab);
+    } while (estVide(tab) == false);
+
     libererTableau(tab);
     printf("FIN --------\n");
 }
