@@ -4,15 +4,18 @@
 #include <stdbool.h>
 
 // Fonction main de test rapide pour verifier que mes codes marches
-int main()
+/** int main()
 {
     tableauDynamique *tab = creerTableau(3);
+    ajouteFin(tab, 5);
+    ajouteFin(tab, 10);
+    ajouteFin(tab, 12);
     int valeur;
     do
     {
         printf("Donner une valeur et 0 pour quiiter : ");
         scanf("%i", &valeur);
-        ajouterElementA(tab, taille(tab), valeur);
+        ajouterElementA(tab, 1, valeur);
         afficherTableau(tab);
         if (valeur == 0)
         {
@@ -24,13 +27,13 @@ int main()
     {
         printf("supprime le dernier : ");
         scanf("%i", &valeur);
-        supprimerFin(tab);
+        supprimerA(tab, 1);
         afficherTableau(tab);
     } while (estVide(tab) == false);
 
     libererTableau(tab);
     printf("FIN --------\n");
-}
+} */
 
 // Affichier tableau creer
 void afficherTableau(tableauDynamique *tab)
