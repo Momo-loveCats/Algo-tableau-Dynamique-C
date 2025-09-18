@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>s
 
 // Definition de la structure tableauDynamique
 typedef struct tableauDynamique
@@ -14,6 +15,9 @@ typedef struct tableauDynamique
 
 // Affiche le tableau
 void afficherTableau(struct tableauDynamique *tab);
+
+// is empty
+bool estVide(tableauDynamique *tab);
 
 // La fonction permet d'ajouter un element entre 0 et taille
 void ajouterElementA(struct tableauDynamique *tab, int index, int element);
