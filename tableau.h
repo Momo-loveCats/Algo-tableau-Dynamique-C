@@ -13,7 +13,7 @@ typedef struct tableauDynamique
 } tableauDynamique;
 
 // Affiche le tableau
-void afficherTableau(struct tableauDynamique tab);
+void afficherTableau(struct tableauDynamique *tab);
 
 // La fonction permet d'ajouter un element entre 0 et taille
 void ajouterElementA(struct tableauDynamique *tab, int index, int element);

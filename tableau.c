@@ -1,24 +1,40 @@
 #include "tableau.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 // Fonction main de test rapide pour verifier que mes codes marches
 int main()
 {
-}
-
-// Affichier tableau
-void afficherTableau(tableauDynamique tab)
-{
-    // Parcours de tableau
-    for (int i = 0; i < tab.taille; i++)
+    tableauDynamique *tab = creerTableau(3);
+    int valeur;
+    do
     {
-        if (i == tab.taille - 1) // Pas de fleche pour le dernier element
+        printf("Donner une valeur et 0 pour quiiter : ");
+        scanf("%i", &valeur);
+        ajouteFin(tab, valeur);
+        afficherTableau(tab);
+        if (valeur == 0)
         {
-            printf("[%d]\n", tab.elements[i]);
             break;
         }
-        printf("[%d] ->", tab.elements[i]);
+    } while (true);
+    libererTableau(tab);
+    printf("FIN --------\n");
+}
+
+// Affichier tableau creer
+void afficherTableau(tableauDynamique *tab)
+{
+    // Parcours de tableau
+    for (int i = 0; i < tab->taille; i++)
+    {
+        if (i == tab->taille - 1) // Pas de fleche pour le dernier element
+        {
+            printf("[%d]\n", tab->elements[i]);
+            break;
+        }
+        printf("[%d] ->", tab->elements[i]);
     }
     printf("\n");
 }
